@@ -1,0 +1,55 @@
+version: '3.3'
+
+services:
+   db:
+     image: mysql:8.0
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     # .env で設定した db 接続情報
+     environment:
+       MYSQL_ROOT_USER: "${MYSQL_ROOT_USER}"
+       MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+       MYSQL_DATABASE: "${MYSQL_DATABASE}"
+       MYSQL_USER: "${MYSQL_USER}"
+       MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+
+   phpmyadmin:
+     image: phpmyadmin/phpmyadmin
+     volumes:
+       - /sessions
+     links:
+       - db
+     ports:
+       - "${DB_HOST}"
+     restart: always
+     # .env で設定した phpmyadmin 情報
+     environment:
+       PMA_ARBITRARY: 1
+       PMA_HOST: "${PMA_HOST}"
+       PMA_USER: "${PMA_USER}"
+       PMA_PASSWORD: "${PMA_PASSWORD}"
+
+   wordpress:
+     depends_on:
+       - db
+     links:
+       - db
+       - phpmyadmin
+     image: wordpress:latest
+     ports:
+       - "8080:80"
+     restart: always
+     volumes:
+       # wp-content配下だけをリンクする
+      - ./wp-content:/var/www/html/wp-content
+      - ./wp-config.ini:/usr/local/etc/php/conf.d/wp-config.ini
+     # .env で設定した wordpress 情報
+     environment:
+       WORDPRESS_DB_HOST: "${WORDPRESS_DB_HOST}"
+       WORDPRESS_DB_USER: "${WORDPRESS_DB_USER}"
+       WORDPRESS_DB_PASSWORD: "${WORDPRESS_DB_PASSWORD}"
+       WORDPRESS_DB_NAME: "${WORDPRESS_DB_NAME}"
+
+volumes:
+    db_data:
