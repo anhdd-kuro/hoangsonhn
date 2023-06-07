@@ -12,4 +12,10 @@ function setupTheme()
 }
 add_action('init', 'setupTheme');
 
+function add_woocommerce_support() {
+	add_theme_support( 'woocommerce' );
+}
+add_action( 'after_setup_theme', 'add_woocommerce_support' );
+
 include_once THEME_URL . '/functions/styles_scripts.php';
+include_once THEME_URL . '/functions/performance.php';

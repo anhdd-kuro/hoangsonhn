@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "adrianwilczynski.alpine-js-intellisense",
+    "sperovita.alpinejs-syntax-highlight",
+    "bradlc.vscode-tailwindcss",
+    "claudiosanches.woocommerce"
+  ]
+}

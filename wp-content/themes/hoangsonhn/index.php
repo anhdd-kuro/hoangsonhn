@@ -1,19 +1,31 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <?php wp_head() ?>
+</head>
+<body>
+  <?php get_header(""); ?>
 
-$current_url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+  <h1>Hello world</h1>
+  <?php
+  $products = wc_get_products([
+    'limit' => 10,
+    'return' => 'objects',
+  ]);
+  ?>
 
-// Construct the path to the page template based on the current URL
-$page_template_path =  "pages" . $current_url . "index";
-
-// Try to load the page template
-if(false === get_template_part($page_template_path)) {
-
-  // If the page template doesn't exist, try a fallback template
-  $page_template_path = "pages" . $current_url . "_/index";
-
-  // Try to load the fallback template
-  if(false === get_template_part($page_template_path)) {
-    // If the fallback template doesn't exist, load the 404 template
-    get_template_part("404");
+  <?php
+  foreach ($products as $product) {
+    echo $product->get_name();
+    echo $product->get_price_html();
+    // echo $product->get_image();
   }
-}
+  ?>
+
+  <?php wp_footer();?>
+</body>
+</html>
