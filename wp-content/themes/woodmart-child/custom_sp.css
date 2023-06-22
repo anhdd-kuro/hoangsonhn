@@ -1,0 +1,38 @@
+/*  ----------------- Header --------------------- */
+.home .whb-header {
+  margin-bottom: 20px;
+}
+
+/*  ----------------- Home Slider --------------------- */
+
+.home-slider {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.home-slider .wd-wpb {
+  margin-bottom: 0 !important;
+}
+
+.vc_col-has-fill>.vc_column-inner {
+  padding-top: 0 !important;
+}
+
+.home .wd-wpb {
+  margin-bottom: 24px;
+}
+
+/*  Shop page - categories tittle*/
+
+.archive .wd-entities-title {
+  font-size: 14px !important;
+}
+
+.wd-nav-mobile {
+  display: flex !important;
+}
+
+/*  Contact form */
+.info-box-wrapper {
+  margin-bottom: 15px;
+}
