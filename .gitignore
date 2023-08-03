@@ -9,7 +9,9 @@
 /wp-content/index.php
 /wp-content/languages
 /wp-content/plugins/*
+
 wp-content/themes/woodmart
+
 /wp-includes/
 /index.php
 /license.txt

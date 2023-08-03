@@ -49,10 +49,7 @@ add_filter('woocommerce_get_price_html', 'custom_price_message');
 function custom_price_message($price)
 {
   if (empty($price)) {
-    if (is_product_category()) {
-      return "<strong>Giá: Liên hệ</strong>";
-    }
-    return '<span style="font-size: 0.8em; font-weight: 500;">Vui lòng <strong>liên hệ qua Hotline hoặc facebook</strong> để biết giá</span>';
+    return "<strong>Giá: Liên hệ</strong>";
   }
 
   return $price;

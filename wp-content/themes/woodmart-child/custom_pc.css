@@ -47,11 +47,10 @@ footer .wd-sub-menu .nav-link-text {
   padding: 10px;
 }
 
-.whb-main-header .brands-widget .brand-item a:hover {
-  padding: 9px;
-  border: 1px solid var(--wd-primary-color);
-  transition: 0s;
+.brand-item {
+  margin: 2px 10px;
 }
+
 
 /*  Filters */
 .wd-shop-prod-per-page {
@@ -89,6 +88,19 @@ header:not(.whb-sticked) .wd-dropdown-cats .menu {
   width: 100% !important;
 }
 
+#menu-danh-muc-san-pham {
+  height: 100%;
+}
+
+.wd-nav-vertical>li {
+  display: flex;
+}
+
+.wd-nav-vertical>li>a {
+  width: 100%;
+}
+
+
 /* Header sub menu */
 .whb-main-header .wd-sub-menu li>a:not(:hover) {
   color: var(--color-gray-800);
@@ -120,8 +132,8 @@ header:not(.whb-sticked) .wd-dropdown-cats .menu {
 }
 
 .custom-hotline a {
-  /* 	color: var(--wd-primary-color); */
-  color: #e21e26;
+  color: var(--wd-primary-color);
+  /*   color: #e21e26; */
 }
 
 .custom-hotline a:hover {
@@ -143,4 +155,25 @@ header:not(.whb-sticked) .wd-dropdown-cats .menu {
 
 #danh-sach-san-pham .vc_column-inner {
   padding: 0;
+}
+
+
+/* -------------------------- Product page --------------------------*/
+
+.single-product .summary-inner>.price {
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.hoang-son-info h3,
+.hoang-son-info p {
+  font-size: 1.2rem !important;
+}
+
+.product-grid-item .price {
+  font-size: 120% !important;
+}
+
+.product_title {
+  font-size: 30px;
 }
