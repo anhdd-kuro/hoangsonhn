@@ -39,15 +39,14 @@
 
 /* -------------------------- Product page --------------------------*/
 .single-product .summary-inner>.price {
-  font-size: 2em;
-  font-weight: 700;
+	font-size: 2em;
+	font-weight: 700;
 }
 
-.hoang-son-info h3,
-.hoang-son-info p {
-  font-size: 1rem !important;
+.hoang-son-info h3, .hoang-son-info p {
+	font-size: 1rem !important;
 }
 
 .box-icon-align-left .box-icon-wrapper {
-  margin-right: 2.4vw !important;
+	margin-right: 2.4vw !important;
 }

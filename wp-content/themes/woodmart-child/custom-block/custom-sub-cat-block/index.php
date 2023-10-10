@@ -27,6 +27,7 @@ function parse_categories_data($categories)
 add_action('init', 'custom_sub_cat_block');
 function custom_sub_cat_block()
 {
+  if(!function_exists('vc_map')) return;
   vc_map(array(
     'name'          => __('Custom sub categories', 'text-domain'),
     'base'          => 'custom_sub_cat_block',
