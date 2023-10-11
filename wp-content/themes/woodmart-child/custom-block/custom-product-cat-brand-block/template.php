@@ -20,6 +20,8 @@ if ($brand_index !== false && isset($segments[$brand_index + 1])) {
 
 // Get the brand term using the slug
 $brand = get_term_by('slug', $brand_slug, 'pa_brand');
+    // print_r($brand);
+
 
 // Initialize an empty array to store the category information
 $categories = [];
@@ -48,7 +50,7 @@ if ($brand) {
     $categories_info = wp_get_post_terms($product_id, 'product_cat');
 
     foreach ($categories_info as $category_info) {
-      $thumbnail_id       = get_term_meta($category->term_id, 'thumbnail_id', true);
+      $thumbnail_id       = get_term_meta($category_info->term_id, 'thumbnail_id', true);
       $category_image_url = wp_get_attachment_url($thumbnail_id);
       $image_src          = $category_image_url ?: 'https://hoangsonhn.vn/wp-content/uploads/woocommerce-placeholder-430x430.png';
       $image_alt          = 'Ảnh đại diện danh mục sản phẩm';
@@ -84,7 +86,7 @@ if ($brand) {
 
 <?php if (!empty($categories)): ?>
 <div id="product-archive-title"
-  class="title-wrapper wd-wpb set-mb-s reset-last-child wd-title-color-default wd-title-style-bordered text-left wd-underline-colored">
+  class="text-left title-wrapper wd-wpb set-mb-s reset-last-child wd-title-color-default wd-title-style-bordered wd-underline-colored">
   <div class="liner-continer">
     <h2 class="woodmart-title-container title wd-font-weight- wd-fontsize-l">
       Danh mục sản phẩm thuộc thương hiệu <?php echo $brand->name; ?>
