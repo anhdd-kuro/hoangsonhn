@@ -2,6 +2,53 @@
   --wd-tags-mb: 1rem;
 }
 
+.product-labels {
+		top: 0 !important;
+    left: 0 !important;
+    transform: translate(-30%, -70%) !important;
+}
+
+.product-element-top {
+	 overflow: visible !important;
+}
+
+.wd-product.wd-hover-base .wrapp-swatches {
+	 display: none !important;
+}
+
+@media (max-width: 1024px) {
+	.wd-nav-mobile {
+			display: flex !important;
+	}
+}
+
+.wd-highlighted-products .elements-grid, .wd-highlighted-products.wd-carousel-container {
+	border: none !important;
+	padding: 25px 0 0 0 !important;
+}
+
+.wd-highlighted-products :is(.product-grid-item) {
+    border-radius: 10px!important;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 10px;
+}
+
+.wd-highlighted-products .wd-products-holder > * {
+	 flex: 0 0 calc(25% - 20px);
+}
+
+.wd-highlighted-products .wd-products-holder {
+	 column-gap: 20px;
+}
+
+.home .wd-highlighted-products {
+	border: none;
+}
+
+.wd-prefooter  .container > p:last-child {
+	display: none;
+}
+
 .wd-dropdown-menu {
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -11,6 +58,10 @@
 .wd-dropdown-menu .vc_row {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.wd-brands .wd-carousel-wrap {
+	justify-content: center;
 }
 
 /*  --------------- Brand swatches --------------- */
@@ -24,6 +75,10 @@
 
 .wd-swatches-brands .wd-swatch.wd-bg {
   border-radius: var(--wd-brd-radius);
+}
+
+.brands-carousel .owl-stage {
+	margin: auto;
 }
 
 /*  --------------- Breadcrumbs --------------- */
@@ -190,10 +245,6 @@ div.wpcf7 .wpcf7-spinner {
 	font-weight: bold;
 }
 
-.wd-highlighted-products .elements-grid, .wd-highlighted-products.wd-carousel-container {
-	border: 1px solid #333 !important;
-}
-
 .wd-nav-vertical.wd-design-default>li:is(.wd-opened,:hover)>a {
 		background-color: var(--bgcolor-gray-200);
 /*     color: var(--color-gray-700); */
@@ -239,5 +290,17 @@ div.wpcf7 .wpcf7-spinner {
 
 
 #toc_container {
-    margin: 20px auto;
+    margin: 36px auto;
+}
+
+.additional_information_tab {
+    display: none !important;
+}
+
+.brand-desc a, .term-description a {
+	 text-decoration: underline;
+}
+
+.wd-nav-vertical>li>a, .wd-sub-menu li>a {
+	 font-size: var(--wd-text-font-size) !important;
 }
